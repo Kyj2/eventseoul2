@@ -7,7 +7,7 @@
   <body>
     <h1>Upcoming Events in Seoul, Korea</h1>
 
-    <label for="event-type">종류:</label>
+    <label for="event-type" class="event-type">종류:</label>
     <select id="event-type">
       <option value="">전체</option>
       <option value="교육/체험">교육/체험</option>
@@ -52,7 +52,35 @@
       <option value="중랑구">중랑구</option>
     </select>
 
+
+
+   
     <div id="event-list"></div>
+
+
+    <button id="scroll-to-top" onclick="scrollToTop()">맨 위로</button>
+
+    <script>
+      var scrollToTopBtn = document.getElementById("scroll-to-top");
+      
+      window.onscroll = function() {
+        scrollFunction();
+      };
+      
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          scrollToTopBtn.style.display = "block";
+        } else {
+          scrollToTopBtn.style.display = "none";
+        }
+      }
+      
+      function scrollToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+    </script>
+
 
     <script src="script.js"></script>
   </body>
